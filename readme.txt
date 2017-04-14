@@ -22,3 +22,7 @@ git学习
 	 git diff readme.txt 查看修改了什么内容（查看difference）
 	 
 	 1.版本回退
+		git log  命令显示从最近到最远的提交日志（日志中包含提交的内容和提交的id等信息）
+		git log --pretty=oneline 如果嫌输出信息太多，可以加上--pretty=oneline参数  
+		 
+							
