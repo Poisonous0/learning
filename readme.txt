@@ -19,3 +19,6 @@ git学习
 二.时光穿梭机
     
      git status 命令查看仓库当前的状态
+	 git diff readme.txt 查看修改了什么内容（查看difference）
+	 
+	 1.版本回退
