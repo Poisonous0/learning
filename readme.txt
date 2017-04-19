@@ -139,3 +139,5 @@ git学习
 		合并某分支到当前分支：git merge <name>
 
 		删除分支：git branch -d <name>
+		
+	2.Creating a new branch is quick AND simple.
