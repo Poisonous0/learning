@@ -30,12 +30,12 @@ git学习
 		git log  命令显示从最近到最远的提交日志（日志中包含提交的内容和提交的id等信息）
 		git log --pretty=oneline 如果嫌输出信息太多，可以加上--pretty=oneline参数  
 		
-		git reset --hard^ 回到上一个版本（回到过去的版本）
-		git reset --hard 版本id (回到过去版本的未来版本，前提是知道未来版本的id，前几位即可)
+		git reset HEAD^ 回到上一个版本（回到过去的版本）
+		git reset HEAD 版本id (回到过去版本的未来版本，前提是知道未来版本的id，前几位即可)
 		git reflog 记录每一次命令
 		
 		小结
-		HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id
+		HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset HEAD commit_id
 		穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
 		要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本
 	
@@ -153,6 +153,14 @@ git学习
 	4.Bug分支
 	    $ git stash 把当前工作现场“储藏”起来，等以后恢复现场后继续工作
 		现在，用git status查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug
+		修复后换到原来的分支
+		用git stash list命令看看：
+		工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：
+		一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
+		另一种方式是用git stash pop，恢复的同时把stash内容也删了
+		
+		你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：
+		$ git stash apply stash@{0}
 		
 
 
