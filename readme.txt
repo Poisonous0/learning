@@ -145,8 +145,13 @@ git学习
 		用git log --graph命令可以看到分支合并图。
 	
 	3.分支管理策略
-
-
+		查看分支历史
+		$ git log --graph --pretty=oneline --abbrev-commit
+		
+		git merge --no-ff -m "" origin
+		合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并
+	4.Bug分支
+		
 
 
 
